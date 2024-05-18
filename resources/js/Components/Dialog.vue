@@ -1,13 +1,15 @@
 <template>
     <v-dialog max-width="500">
         <template v-slot:activator="{ props: activatorProps }">
-            <v-text-field label="Label" variant="outlined" v-bind="activatorProps" append-inner-icon="mdi-map-marker"></v-text-field>
+            <v-text-field label="Label" variant="outlined" v-bind="activatorProps" ></v-text-field>
         </template>
 
         <template v-slot:default="{ isActive }">
             <v-container>
                 <v-row justify="space-around">
-                    
+                    <v-date-picker
+                    locale="es"
+                    />
                 </v-row>
             </v-container>
         </template>
@@ -16,7 +18,6 @@
 
 <script>
 import Imput from '@/Components/form/Imput.vue';
-
 
 export default {
     data() {

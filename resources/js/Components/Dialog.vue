@@ -1,15 +1,13 @@
 <template>
     <v-dialog max-width="500">
         <template v-slot:activator="{ props: activatorProps }">
-            <v-text-field label="Label" variant="outlined" v-bind="activatorProps" ></v-text-field>
+            <v-text-field label="Introduzca una fecha" variant="outlined" v-bind="activatorProps" ></v-text-field>
         </template>
 
         <template v-slot:default="{ isActive }">
             <v-container>
                 <v-row justify="space-around">
-                    <v-date-picker
-                    locale="es"
-                    />
+                    <ADatepicker/>
                 </v-row>
             </v-container>
         </template>
@@ -18,14 +16,14 @@
 
 <script>
 import Imput from '@/Components/form/Imput.vue';
-
+import ADatepicker from '@/Components/form/a-datepicker.vue';
 export default {
     data() {
         return {
             dialog: false,
         };
     },
-    components: { Imput }
+    components: { Imput, ADatepicker }
 }
 
 </script>

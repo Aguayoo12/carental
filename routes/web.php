@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Brand;
 use App\Models\Car;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -22,3 +23,11 @@ Route::middleware([
     Route::resource('cars', Car::class);
 });
 
+Route::get('/admin', function () {
+    $cars = Car::get();
+    $brands = Brand::get();
+    return Inertia::render('Admin/AdminView', [
+        'cars' => $cars,
+        'brands' => $brands
+    ]);
+})->middleware(['auth'])->name('admin');

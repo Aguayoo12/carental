@@ -9,7 +9,7 @@ import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
-import { aliases, mdi } from 'vuetify/iconsets/mdi-svg'
+import { aliases, mdi } from 'vuetify/iconsets/mdi'
 import i18n from './i18n'
 
 const vuetify = createVuetify({
@@ -23,7 +23,7 @@ const vuetify = createVuetify({
         },
     },
     locale: {
-        t: (key, ...params) => i18n.t(key, params),
+        locale: 'es',
     },
 })
 
@@ -34,7 +34,6 @@ createInertiaApp({
         return createApp({ render: () => h(App, props) })
             .use(plugin)
             .use(ZiggyVue)
-            .use(i18n)
             .use(vuetify)
             .mount(el);
     },
